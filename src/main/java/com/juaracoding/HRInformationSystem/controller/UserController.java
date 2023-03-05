@@ -1,6 +1,5 @@
 package com.juaracoding.HRInformationSystem.controller;
 
-import com.juaracoding.HRInformationSystem.configuration.OtherConfig;
 import com.juaracoding.HRInformationSystem.dto.ForgetPasswordDTO;
 import com.juaracoding.HRInformationSystem.dto.UserDTO;
 import com.juaracoding.HRInformationSystem.handler.FormatValidation;
@@ -84,14 +83,13 @@ public class UserController {
 
         Userz users = modelMapper.map(userz, new TypeToken<Userz>() {}.getType());
 
-        if (OtherConfig.getFlagSessionValidation().equals("y"))
-        {
+
             objectMapper = userService.checkRegis(users,request);
             if(objectMapper.get("message").toString().equals(ConstantMessage.ERROR_FLOW_INVALID))//AUTO LOGOUT JIKA ADA PESAN INI
             {
                 return "redirect:/api/check/logout";
             }
-        }
+
 
         if((Boolean) objectMapper.get("success"))
         {
@@ -126,14 +124,13 @@ public class UserController {
             return "redirect:/api/check/logout";//LANGSUNG LOGOUT KARENA FLOW TIDAK VALID / MUNGKIN HIT API INI BUKAN DARI WEB
         }
 
-        if (OtherConfig.getFlagSessionValidation().equals("y"))
-        {
+
             objectMapper = userService.getNewToken(email,request);
             if(objectMapper.get("message").toString().equals(ConstantMessage.ERROR_FLOW_INVALID))//AUTO LOGOUT JIKA ADA PESAN INI
             {
                 return "redirect:/api/check/logout";
             }
-        }
+
         Boolean isSuccess = (Boolean) objectMapper.get("success");
         if(isSuccess)
         {
@@ -164,13 +161,12 @@ public class UserController {
 
         String verToken = userz.getToken();
         int lengthToken = verToken.length();
-        if (OtherConfig.getFlagSessionValidation().equals("y"))
-        {
+
             if(email== null || email.equals("") || !FormatValidation.emailFormatValidation(email,null))
             {
                 return "redirect:/api/check/logout";//Flow sudah salah kalau ini kosong ATAU FORMAT EMAIL TIDAK SESUAI
             }
-        }
+
 
         if(verToken.equals(""))//token tidak boleh kosong
         {
@@ -185,14 +181,13 @@ public class UserController {
             return "auth/verifikasi";
         }
 
-        if (OtherConfig.getFlagSessionValidation().equals("y"))
-        {
+
             objectMapper = userService.confirmRegis(userz,email,request);
             if(objectMapper.get("message").toString().equals(ConstantMessage.ERROR_FLOW_INVALID))//AUTO LOGOUT JIKA ADA PESAN INI
             {
                 return "redirect:/api/check/logout";
             }
-        }
+
 
         if((Boolean) objectMapper.get("success"))
         {
@@ -281,14 +276,13 @@ public class UserController {
             return "auth/forget_pwd_email";
         }
 
-        if (OtherConfig.getFlagSessionValidation().equals("y"))
-        {
+
             objectMapper = userService.sendMailForgetPwd(emailz,request);
             if(objectMapper.get("message").toString().equals(ConstantMessage.ERROR_FLOW_INVALID))//AUTO LOGOUT JIKA ADA PESAN INI
             {
                 return "redirect:/api/check/logout";
             }
-        }
+
         Boolean isSuccess = (Boolean) objectMapper.get("success");
         ForgetPasswordDTO nextForgetPasswordDTO = new ForgetPasswordDTO();
         if(isSuccess)
@@ -357,13 +351,13 @@ public class UserController {
             return "auth/forget_pwd_verifikasi";
         }/*END OF VALIDATION*/
 
-        if (OtherConfig.getFlagSessionValidation().equals("y")){
+
             objectMapper = userService.confirmTokenForgotPwd(forgetPasswordDTO,request);
             if(objectMapper.get("message").toString().equals(ConstantMessage.ERROR_FLOW_INVALID))
             {
                 return "redirect:/api/check/logout";
             }
-        }
+
 
         Boolean isSuccess = (Boolean) objectMapper.get("success");
         if(isSuccess)
@@ -407,14 +401,13 @@ public class UserController {
             return "redirect:/api/check/logout";
         }
 
-        if (OtherConfig.getFlagSessionValidation().equals("y"))
-        {
+
             objectMapper = userService.confirmPasswordChange(forgetPasswordDTO,request);
             if(objectMapper.get("message").toString().equals(ConstantMessage.ERROR_FLOW_INVALID))
             {
                 return "redirect:/api/check/logout";
             }
-        }
+
 
         Boolean isSuccess = (Boolean) objectMapper.get("success");
         if(isSuccess)
@@ -451,14 +444,13 @@ public class UserController {
             return "redirect:/api/check/logout";
         }
 
-        if (OtherConfig.getFlagSessionValidation().equals("y"))
-        {
+
             objectMapper = userService.getNewToken(email,request);
             if(objectMapper.get("message").toString().equals(ConstantMessage.ERROR_FLOW_INVALID))
             {
                 return "redirect:/api/check/logout";
             }
-        }
+
         Boolean isSuccess = (Boolean) objectMapper.get("success");
         if(isSuccess)
         {

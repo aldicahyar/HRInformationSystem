@@ -39,45 +39,40 @@ public class AdminController {
         this.userService = userService;
     }
 
-    private Map<String,Object> objectMapper = new HashMap<String,Object>();
+    private Map<String, Object> objectMapper = new HashMap<String, Object>();
 
     private MappingAttribute mappingAttribute = new MappingAttribute();
 
 
     @PostMapping("/dashboard")
     public String dashboard(@ModelAttribute("usr")
-                        @Valid Userz userz,
-                        BindingResult bindingResult,
-                        Model model,
-                        WebRequest request,
-                        HttpServletRequest hrequest)
-    {
+                            @Valid Userz userz,
+                            BindingResult bindingResult,
+                            Model model,
+                            WebRequest request,
+                            HttpServletRequest hrequest) {
 
-        if(bindingResult.hasErrors())
-        {
+        if (bindingResult.hasErrors()) {
             return "auth/signin";
         }
 
-        objectMapper = userService.doLogin(userz,request);
+        objectMapper = userService.doLogin(userz, request);
         Boolean isSuccess = (Boolean) objectMapper.get("success");
         Userz nextUser = (Userz) objectMapper.get("data");
 
-        if(isSuccess)
-        {
-//                    System.out.println(WebRequest.SCOPE_REQUEST);//0
-//                    System.out.println(WebRequest.SCOPE_SESSION);//1
+        if (isSuccess) {
+            //        System.out.println(WebRequest.SCOPE_REQUEST);//0
+            //        System.out.println(WebRequest.SCOPE_SESSION);//1
             //0 = scope request artinya hanya saat login saja tidak menyimpan di memory server / database
             //1 = scope session artinya setelah login dan akan menyimpan data selama session masih aktif
-            request.setAttribute("USR_ID",nextUser.getIdUser(),1);//cara ambil request.getAttribute("USR_ID",1)
-            request.setAttribute("EMAIL",nextUser.getEmail(),1);//cara ambil request.getAttribute("EMAIL",1)
-            request.setAttribute("NO_HP",nextUser.getNoHP(),1);//cara ambil request.getAttribute("NO_HP",1)
-            request.setAttribute("USR_NAME",nextUser.getUsername(),1);//cara ambil request.getAttribute("USR_NAME",1)
-            mappingAttribute.setAttribute(model,objectMapper,request);//urutan nya ini terakhir
+            request.setAttribute("USR_ID", nextUser.getIdUser(), 1);//cara ambil request.getAttribute("USR_ID",1)
+            request.setAttribute("EMAIL", nextUser.getEmail(), 1);//cara ambil request.getAttribute("EMAIL",1)
+            request.setAttribute("NO_HP", nextUser.getNoHP(), 1);//cara ambil request.getAttribute("NO_HP",1)
+            request.setAttribute("USR_NAME", nextUser.getUsername(), 1);//cara ambil request.getAttribute("USR_NAME",1)
+            mappingAttribute.setAttribute(model, objectMapper, request);//urutan nya ini terakhir
             return "admin/dashboard";
-        }
-        else
-        {
-            mappingAttribute.setErrorMessage(bindingResult,objectMapper.get("message").toString());
+        } else {
+            mappingAttribute.setErrorMessage(bindingResult, objectMapper.get("message").toString());
             return "auth/signin";
         }
     }
