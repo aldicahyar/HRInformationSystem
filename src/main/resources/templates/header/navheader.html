@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+    <link th:href="@{/styles/navbar.css}" rel="stylesheet" />
+    <link th:href="@{/styles/banner.css}" rel="stylesheet" />
+    <title>Title</title>
+</head>
+<body>
+
+
+<div class="navbar" th:fragment="navapalah">
+    <div class="wrapper">
+        <div class="logo">
+            <img src="https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/images/gnb-desktop-120x32.png" alt="">
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a th:href="@{/api/check/index1/}">Home</a>
+                </li>
+                <li th:if="${USR_IDZ != null}">
+                    <a href="#">STUDENTS</a>
+                    <ul class="menu-dropdown">
+                        <li>
+                            <a href="/api/school/v1/students/">Students</a>
+                        </li>
+                        <li>
+                            <a href="/link">Sub Menu 1</a>
+                        </li>
+                        <li>
+                            <a href = "/api/">Employee</a>
+                        </li>
+                        <li>
+                            <a href = "/api/check/index1/">Home</a>
+                        </li>
+                    </ul>
+
+                </li>
+                <li th:if="${USR_IDZ != null}">
+                    <a href="#">EMPLOYEE</a>
+                    <ul class="menu-dropdown">
+                        <li>
+                            <a href="/api/school/v1/students/">Students</a>
+                        </li>
+                        <li>
+                            <a href="/link">Sub Menu 1</a>
+                        </li>
+                        <li>
+                            <a href = "/api/">Employee</a>
+                        </li>
+                        <li>
+                            <a href="#">Sub Menu 2</a>
+                        </li>
+                        <li>
+                            <a href = "/api/check/index1/">Home</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a th:if="${USR_IDZ != null}" href="/api/check/logout">logout</a>
+                </li>
+                <li>
+                    <a th:if="${USR_IDZ == null}" href="/api/check/register">Register</a>
+                </li>
+                <li>
+                    <a th:if="${USR_IDZ == null}" href="/api/check/signin">Sign In</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

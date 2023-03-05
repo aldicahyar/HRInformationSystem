@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Accordion</title>
+  <link th:href="@{/styles/accordion.css}" rel="stylesheet" />
+</head>
+<body>
+<!--New Video-->
+<div class="dt-wrapper">
+  <!-- Accordion Start -->
+  <div class="container" style="padding: 0px;">
+    <div class="col-md-12">
+      <div class="dt-accordion dt-accordion-orange" id="dt-accordion">
+        <div class="dt-accordion-label">
+          <input type="checkbox" id="dt-accordion-two" name="dt-accordion" class="dt-tab-2" />
+          <label for="dt-accordion-two">
+            <h2>NEW video: &ldquo;Paris &amp; Normandy&rdquo;</h2>
+            <p>Experience the gems of Northern France as seen through the eyes of a Uniworld past guest. <em>Magnifique</em>!</p>
+            <ul class="dt-accordion-section-two">
+              <li class="videoWrapper">
+                <div class="embed-container">
+<!--                  <iframe width="560" height="315" src="https://www.youtube.com/embed/bBlq9N7lmDQ?showinfo=0" frameborder="0" style="margin: auto;"></iframe>-->
+                    <p>Menu A</p>
+                </div>
+              </li>
+            </ul>
+            <ul class="dt-accordion-section-two">
+              <li class="videoWrapper">
+                <div class="embed-container">
+                  <p>Menu B</p>
+                </div>
+                <div class="embed-container">
+                  <p>Menu C</p>
+                </div>
+                <div class="embed-container">
+                  <p>Menu D</p>
+                </div>
+              </li>
+            </ul>
+            <div class="buttonWrap">
+              <span class="button1a"></span>
+              <a href="/boutique-river-cruises/europe/paris-and-normandy/2015/" class="button1">View Cruise &amp; Tour</a>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Accordion End -->
+</div>
+<!--END New Video-->
+
+</body>
+</html>

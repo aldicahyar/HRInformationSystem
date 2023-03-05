@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+<!-- Modal -->
+<div th:fragment="modal(id)" class="modal fade" th:id="${id}" tabindex="-1" role="dialog" aria-labelledby="studentAddLabel"
+	 aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="studentAddLabel">Modal title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<label th:text="${id}" />
+				<!--                <input th:field = "*{id}" name="email" id="email"/>-->
+<!--				<form th:action="@{/api/school/v1/students}" th:object = "${student1}" method="POST">-->
+<!--					<div class ="form-group">-->
+<!--						<label> Student First Name </label>-->
+<!--						<input-->
+<!--								type = "text"-->
+<!--								name = "firstName"-->
+<!--								th:field = "*{firstName}"-->
+<!--								class = "form-control"-->
+<!--								placeholder="Enter Student First Name"-->
+<!--						/>-->
+<!--					</div>-->
+
+<!--					<div class ="form-group">-->
+<!--						<label> Student Last Name </label>-->
+<!--						<input-->
+<!--								type = "text"-->
+<!--								name = "lastName"-->
+<!--								th:field = "*{lastName}"-->
+<!--								class = "form-control"-->
+<!--								placeholder="Enter Student Last Name"-->
+<!--						/>-->
+<!--					</div>-->
+
+<!--					<div class ="form-group">-->
+<!--						<label> Student Email </label>-->
+<!--						<input-->
+<!--								type = "text"-->
+<!--								name = "email"-->
+<!--								th:field = "*{email}"-->
+<!--								class = "form-control"-->
+<!--								placeholder="Enter Student Email"-->
+<!--						/>-->
+<!--					</div>-->
+
+<!--					<div class = "box-footer">-->
+<!--						<button type="submit" class = "btn btn-primary">-->
+<!--							Submit-->
+<!--						</button>-->
+<!--					</div>-->
+<!--				</form>-->
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
