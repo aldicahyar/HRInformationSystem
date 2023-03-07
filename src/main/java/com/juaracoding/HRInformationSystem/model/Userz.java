@@ -11,6 +11,9 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Date;
 
+/*
+    KODE MODUL 01
+ */
 @Entity
 @Table(name = "MstUser", uniqueConstraints = @UniqueConstraint(columnNames = "Email"))
 public class Userz {
@@ -81,6 +84,18 @@ public class Userz {
 
     @Column(name = "NoHP")
     private String noHP;
+
+    @ManyToOne
+    @JoinColumn(name = "IDAkses")
+    private Akses akses;
+
+    public Akses getAkses() {
+        return akses;
+    }
+
+    public void setAkses(Akses akses) {
+        this.akses = akses;
+    }
 
     public String getNoHP() {
         return noHP;

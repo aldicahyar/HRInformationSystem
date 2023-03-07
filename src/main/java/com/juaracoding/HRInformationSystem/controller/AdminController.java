@@ -12,11 +12,13 @@ Version 1.0
 
 import com.juaracoding.HRInformationSystem.model.Userz;
 import com.juaracoding.HRInformationSystem.service.UserService;
+import com.juaracoding.HRInformationSystem.utils.GenerateMenuString;
 import com.juaracoding.HRInformationSystem.utils.MappingAttribute;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -69,11 +71,48 @@ public class AdminController {
             request.setAttribute("EMAIL", nextUser.getEmail(), 1);//cara ambil request.getAttribute("EMAIL",1)
             request.setAttribute("NO_HP", nextUser.getNoHP(), 1);//cara ambil request.getAttribute("NO_HP",1)
             request.setAttribute("USR_NAME", nextUser.getUsername(), 1);//cara ambil request.getAttribute("USR_NAME",1)
-            mappingAttribute.setAttribute(model, objectMapper, request);//urutan nya ini terakhir
+            request.setAttribute("HTML_MENU", new GenerateMenuString().menuInnerHtml(nextUser.getAkses()),1);//cara ambil request.getAttribute("USR_NAME",1)
+            mappingAttribute.setAttribute(model,objectMapper,request);//urutan nya ini terakhir
             return "admin/dashboard";
         } else {
             mappingAttribute.setErrorMessage(bindingResult, objectMapper.get("message").toString());
             return "auth/signin";
         }
     }
+
+//    @GetMapping("/salestwo")
+//    public String getSalesTwo(Model model, WebRequest request)
+//    {
+//        mappingAttribute.setAttribute(model,objectMapper,request);//untuk set session
+//        return "sales/sales_two";
+//    }
+
+    @GetMapping("/form")
+    public String form(Model model, WebRequest request){
+        mappingAttribute.setAttribute(model,objectMapper,request);//untuk set session
+        return "admin/form-elements";
+    }
+
+    @GetMapping("/tabel")
+    public String tabel(){
+        return "admin/table-elements";
+    }
+
+    @GetMapping("/karyawan")
+    public String karyawan(){
+        return "admin/master-karyawan";
+    }
+
+    @GetMapping("/absen")
+    public String absen(){
+        return "admin/master-absen";
+    }
+
+    @GetMapping("/report")
+    public String report(Model model, WebRequest request){
+        mappingAttribute.setAttribute(model,objectMapper,request);//untuk set session
+        return "admin/report";
+    }
+
+
 }

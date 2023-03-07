@@ -18,12 +18,13 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-            <a class="navbar-brand brand-logo" href="admin/dashboard">
-                <img th:src="@{/images/logo.svg}" alt="logo" />
+            <a class="navbar-brand brand-logo" href="/admin/dashboard">
+<!--                <img th:src="@{/images/logo.png}" alt="logo" width=50px height=50px />-->
             </a>
-            <a class="navbar-brand brand-logo-mini" href="index.html">
-                <img th:src="@{/images/logo-mini.svg}" alt="logo" />
-            </a>
+            <h4>HR-Portal</h4>
+<!--            <a class="navbar-brand brand-logo-mini" href="index.html">-->
+<!--                <img th:src="@{/images/logo-mini.svg}" alt="logo" />-->
+<!--            </a>-->
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
             <button class="navbar-toggler navbar-toggler d-none d-lg-block navbar-dark align-self-center mr-3" type="button" data-toggle="minimize">
@@ -42,9 +43,9 @@
                         <a class="dropdown-item">
                             Change Password
                         </a>
-                        <a class="dropdown-item">
-                            Sign Out
-                        </a>
+                            <a class="dropdown-item">
+                                Sign Out
+                            </a>
                     </div>
                 </li>
             </ul>
@@ -66,9 +67,9 @@
                                 <img th:src="@{/images/faces/face1.jpg}" alt="profile image">
                             </div>
                             <div class="text-wrapper">
-                                <p class="profile-name">Richard V.Welsh</p>
+                                <p class="profile-name">INI nama Account</p>
                                 <div>
-                                    <small class="designation text-muted">Manager</small>
+                                    <small class="designation text-muted">HRD</small>
                                     <span class="status-indicator online"></span>
                                 </div>
                             </div>
@@ -79,11 +80,32 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{admin/dashboard}">
-                        <i class="menu-icon mdi mdi-television"></i>
-                        <span class="menu-title">Dashboard</span>
+                    <a class="nav-link" th:href="@{/admin/karyawan}">
+                        <i class="menu-icon mdi mdi-account-multiple-plus"></i>
+                        <span class="menu-title">Master_Employee</span>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/absen}">
+                        <i class="menu-icon mdi mdi-television"></i>
+                        <span class="menu-title">Master_Absen</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/report}">
+                        <i class="menu-icon mdi mdi-printer"></i>
+                        <span class="menu-title">Report</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/report}">
+                        Report
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                         <i class="menu-icon mdi mdi-content-copy"></i>
@@ -101,20 +123,39 @@
                         </ul>
                     </div>
                 </li>
+
+<!--            <center>-->
+<!--                <li>-->
+<!--                    <a href="#">MASTER_Employee</a>-->
+<!--                    <ul class="menu-dropdown">-->
+<!--                    </ul>-->
+<!--                        <li>-->
+<!--                            <a-->
+<!--                               href="/admin/form">FORM-->
+<!--                            </a>-->
+<!--                        </li>-->
+
+<!--            </center>-->
+
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{form-elements}">
-                        <i class="menu-icon mdi mdi-backup-restore"></i>
-                        <span class="menu-title">Form elements</span>
-                    </a>
+
+                <th:block th:if="${USR_IDZ != null}" th:utext="${HTML_MENUZ}" />
+
                 </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/admin/form}">-->
+<!--                        <span class="menu-title">FORM</span>-->
+<!--                    </a>-->
+<!--                </li>-->
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="menu-icon mdi mdi-chart-line"></i>
-                        <span class="menu-title">Charts</span>
+                        <span class="menu-title">ANUAN</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{table-elements}">
+                    <a class="nav-link" th:href="@{/admin/tabel}">
                         <i class="menu-icon mdi mdi-table"></i>
                         <span class="menu-title">Tables</span>
                     </a>

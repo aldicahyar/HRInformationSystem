@@ -16,11 +16,16 @@
 }
 
 .menu-dropdown > li {
-  margin-top: 10px;
   display: none;
+
 }
 
 .menu > ul > li:hover > .menu-dropdown > li {
+  display: block;
+}
+
+.menu-dropdown > li > a {
+  width: 100%;
   display: block;
 }
 
@@ -42,9 +47,11 @@
 
 }
 
+
 .menu ul li a {
   text-decoration: none;
   padding: 10px;
   background-color: aliceblue;
-  color: #000;
+  color: #000;
+  width:100%;
 }

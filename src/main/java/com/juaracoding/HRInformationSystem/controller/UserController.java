@@ -6,6 +6,7 @@ import com.juaracoding.HRInformationSystem.handler.FormatValidation;
 import com.juaracoding.HRInformationSystem.model.Userz;
 import com.juaracoding.HRInformationSystem.service.UserService;
 import com.juaracoding.HRInformationSystem.utils.ConstantMessage;
+import com.juaracoding.HRInformationSystem.utils.GenerateMenuString;
 import com.juaracoding.HRInformationSystem.utils.MappingAttribute;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -234,6 +235,7 @@ public class UserController {
             request.setAttribute("EMAIL",nextUser.getEmail(),1);//cara ambil request.getAttribute("EMAIL",1)
             request.setAttribute("NO_HP",nextUser.getNoHP(),1);//cara ambil request.getAttribute("NO_HP",1)
             request.setAttribute("USR_NAME",nextUser.getUsername(),1);//cara ambil request.getAttribute("USR_NAME",1)
+            request.setAttribute("HTML_MENU", new GenerateMenuString().menuInnerHtml(nextUser.getAkses()),1);//cara ambil request.getAttribute("USR_NAME",1)
             mappingAttribute.setAttribute(model,objectMapper,request);//urutan nya ini terakhir
             return "index_1";
         }

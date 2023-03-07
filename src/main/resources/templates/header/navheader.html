@@ -20,44 +20,9 @@
                 <li>
                     <a th:href="@{/api/check/index1/}">Home</a>
                 </li>
-                <li th:if="${USR_IDZ != null}">
-                    <a href="#">STUDENTS</a>
-                    <ul class="menu-dropdown">
-                        <li>
-                            <a href="/api/school/v1/students/">Students</a>
-                        </li>
-                        <li>
-                            <a href="/link">Sub Menu 1</a>
-                        </li>
-                        <li>
-                            <a href = "/api/">Employee</a>
-                        </li>
-                        <li>
-                            <a href = "/api/check/index1/">Home</a>
-                        </li>
-                    </ul>
 
-                </li>
-                <li th:if="${USR_IDZ != null}">
-                    <a href="#">EMPLOYEE</a>
-                    <ul class="menu-dropdown">
-                        <li>
-                            <a href="/api/school/v1/students/">Students</a>
-                        </li>
-                        <li>
-                            <a href="/link">Sub Menu 1</a>
-                        </li>
-                        <li>
-                            <a href = "/api/">Employee</a>
-                        </li>
-                        <li>
-                            <a href="#">Sub Menu 2</a>
-                        </li>
-                        <li>
-                            <a href = "/api/check/index1/">Home</a>
-                        </li>
-                    </ul>
-                </li>
+                <th:block th:if="${USR_IDZ != null}" th:utext="${HTML_MENUZ}" />
+
                 <li>
                     <a th:if="${USR_IDZ != null}" href="/api/check/logout">logout</a>
                 </li>

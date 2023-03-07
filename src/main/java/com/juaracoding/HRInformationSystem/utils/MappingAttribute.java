@@ -37,6 +37,8 @@ public class MappingAttribute {
         model.addAttribute("NO_HPZ",request.getAttribute("NO_HP",1));//panggil di web dengan nama ${NO_HPZ}
         model.addAttribute("EMAILZ",request.getAttribute("EMAIL",1));//panggil di web dengan nama ${EMAILZ}
         model.addAttribute("USR_NAMEZ",request.getAttribute("USR_NAME",1));//panggil di web dengan nama ${USR_NAMEZ}
+        model.addAttribute("HTML_MENUZ",request.getAttribute("HTML_MENU",1));//panggil di web dengan nama ${HTML_MENUZ}
+//        model.addAttribute("BRANCH_ID",request.getAttribute("USR_NAME",1));//panggil di web dengan nama ${USR_NAMEZ}
         if(mapz.get("errorCode") != null)
         {
             model.addAttribute("errorCode",mapz.get("errorCode"));

@@ -74,7 +74,7 @@ public class CheckPageController {
     @GetMapping("/logout")
     public String destroySession(HttpServletRequest request) {
         request.getSession().invalidate();
-        return "redirect:/api/check/signin";
+        return "redirect:/";
     }
 
 }

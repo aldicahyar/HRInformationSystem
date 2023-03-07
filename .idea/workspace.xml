@@ -5,14 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0b80c90-880c-4573-b5fa-9408df9fe4d5" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/HRInformationSystem/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/HRInformationSystem/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/HRInformationSystem/controller/CheckPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/HRInformationSystem/controller/CheckPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/HRInformationSystem/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/HRInformationSystem/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/HRInformationSystem/model/Userz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/HRInformationSystem/model/Userz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/HRInformationSystem/utils/MappingAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/HRInformationSystem/utils/MappingAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/auth/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/auth/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header/navheader.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header/navheader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -20,13 +37,15 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
         <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
@@ -41,10 +60,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/JUARA_CODING_TUGAS_AKHIR/HRInformationSystem/src/main/resources",
+    "last_opened_file_path": "D:/JUARA_CODING_TUGAS_AKHIR/HRInformationSystem/src/main/resources/static/styles",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -52,8 +72,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JUARA_CODING_TUGAS_AKHIR\HRInformationSystem\src\main\resources\static\styles" />
+      <recent name="D:\JUARA_CODING_TUGAS_AKHIR\HRInformationSystem\src\main\java\com\juaracoding\_01JavaWeb\repo" />
+      <recent name="D:\JUARA_CODING_TUGAS_AKHIR\HRInformationSystem\src\main\java\com\juaracoding\_01JavaWeb\model" />
+      <recent name="D:\JUARA_CODING_TUGAS_AKHIR\HRInformationSystem\src\main\resources\static\images" />
       <recent name="D:\JUARA_CODING_TUGAS_AKHIR\HRInformationSystem\src\main\resources" />
-      <recent name="D:\JUARA_CODING_TUGAS_AKHIR\HRInformationSystem\src\main\java\com\juaracoding\_01JavaWeb" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.juaracoding._01JavaWeb.utils" />
+      <recent name="com.juaracoding._01JavaWeb.service" />
+      <recent name="com.juaracoding._01JavaWeb.model" />
     </key>
   </component>
   <component name="RunManager">
@@ -85,6 +113,14 @@
       <option name="presentableId" value="Default" />
       <updated>1677997071754</updated>
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1678006959402</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678006959402</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,5 +137,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/juaracoding/HRInformationSystem/utils/GenerateMenuString.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
