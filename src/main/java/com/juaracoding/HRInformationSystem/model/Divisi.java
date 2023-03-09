@@ -2,6 +2,7 @@ package com.juaracoding.HRInformationSystem.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /*
     KODE MODUL 05
@@ -23,6 +24,11 @@ public class Divisi {
 
     @Column(name = "DeskripsiDivisi")
     private String deskripsiDivisi;
+
+    @OneToMany
+    @JoinTable(name = "Jabatan",
+            joinColumns = {@JoinColumn(name = "IDKaryawan", referencedColumnName = "IDDivisi")})
+    private List<Divisi> jabatanList;
 
     @Column(name ="CreatedDate" , nullable = false)
     private Date createdDate = new Date();
@@ -71,6 +77,14 @@ public class Divisi {
 
     public void setDeskripsiDivisi(String deskripsiDivisi) {
         this.deskripsiDivisi = deskripsiDivisi;
+    }
+
+    public List<Divisi> getJabatanList() {
+        return jabatanList;
+    }
+
+    public void setJabatanList(List<Divisi> jabatanList) {
+        this.jabatanList = jabatanList;
     }
 
     public Date getCreatedDate() {
