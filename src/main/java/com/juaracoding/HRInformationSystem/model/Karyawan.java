@@ -34,11 +34,11 @@ public class Karyawan {
 
     @Length(message = ConstantMessage.ERROR_GENDER_CONFIRM_LENGTH, max = 1)
     @Column(name = "JenisKelamin")
-    private byte jenisKelamin;
+    private String jenisKelamin;
 
     @Length(message = ConstantMessage.ERROR_MARTIALSTATUS_CONFIRM_LENGTH, max = 1)
     @Column(name = "StatusPernikahan", length = 1)
-    private byte statusPernikahan;
+    private String  statusPernikahan;
 
     @Column(name = "TanggalLahir")
     private Date tanggalLahir;
@@ -102,19 +102,19 @@ public class Karyawan {
         this.namaLengkap = namaLengkap;
     }
 
-    public byte getJenisKelamin() {
+    public String getJenisKelamin() {
         return jenisKelamin;
     }
 
-    public void setJenisKelamin(byte jenisKelamin) {
+    public void setJenisKelamin(String jenisKelamin) {
         this.jenisKelamin = jenisKelamin;
     }
 
-    public byte getStatusPernikahan() {
+    public String getStatusPernikahan() {
         return statusPernikahan;
     }
 
-    public void setStatusPernikahan(byte statusPernikahan) {
+    public void setStatusPernikahan(String statusPernikahan) {
         this.statusPernikahan = statusPernikahan;
     }
 
