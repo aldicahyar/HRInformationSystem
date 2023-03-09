@@ -107,4 +107,9 @@ public class ConstantMessage {
     public final static String ERROR_PASSWORD_CONFIRM_FAILED = "PASSWORD KONFIRMASI TIDAK COCOK DENGAN PASSWORD BARU !!";
     public final static String ERROR_PASSWORD_IS_SAME = "PASSWORD BARU TIDAK BOLEH SAMA DENGAN PASSWORD LAMA !!";
 
+//    Another ConstantMessage
+
+    public final static String ERROR_GENDER_CONFIRM_LENGTH = "JENIS KELAMIN HANYA DI ISI L = LAKI - LAKI / P = PEREMPUAN";
+    public final static String ERROR_MARTIALSTATUS_CONFIRM_LENGTH = "JENIS PERNIKAHAN HANYA DI ISI M = MARRIED / S = SINGLE";
+
 }
