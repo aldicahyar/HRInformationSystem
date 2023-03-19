@@ -15,6 +15,8 @@
     </parent>
 
     <properties>
+        <bootstrap.version>4.0.0-2</bootstrap.version><!--PENAMBAHAN 06-03-2023        -->
+        <webjars-locator.version>0.30</webjars-locator.version><!--PENAMBAHAN 06-03-2023  -->
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,6 +29,46 @@
         <!--            <artifactId>h2</artifactId>-->
         <!--            <version>1.4.197</version>-->
         <!--        </dependency>-->
+
+
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.20.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.github.librepdf</groupId>
+            <artifactId>openpdf</artifactId>
+            <version>1.3.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.xhtmlrenderer</groupId>
+            <artifactId>flying-saucer-pdf</artifactId>
+            <version>9.1.20</version>
+        </dependency>
+
+
+        <dependency><!--PENAMBAHAN 06-03-2023        -->
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-locator</artifactId>
+            <version>${webjars-locator.version}</version>
+        </dependency>
+
+        <dependency><!--PENAMBAHAN 06-03-2023        -->
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${bootstrap.version}</version>
+        </dependency>
+
+        <dependency><!--PENAMBAHAN 06-03-2023        -->
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
 
         <dependency>
             <groupId>com.google.code.findbugs</groupId>

@@ -1,5 +1,6 @@
 package com.juaracoding.HRInformationSystem.dto;
 
+
 import com.juaracoding.HRInformationSystem.utils.ConstantMessage;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -9,6 +10,9 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class UserDTO {
+
+
+    private Long idUser;
 
     @NotEmpty(message = ConstantMessage.ERROR_EMAIL_IS_EMPTY)
     @Length(message = ConstantMessage.ERROR_EMAIL_MAX_MIN_LENGTH ,min = 15,max = 50)
@@ -37,8 +41,25 @@ public class UserDTO {
     @NotEmpty(message = ConstantMessage.ERROR_NOHP_IS_EMPTY)
     @NotNull(message = ConstantMessage.ERROR_NOHP_IS_NULL)
     private String noHP;
-
     private String token;
+
+    private AksesDTO akses;
+
+    public Long getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
+    }
+
+    public AksesDTO getAkses() {
+        return akses;
+    }
+
+    public void setAkses(AksesDTO akses) {
+        this.akses = akses;
+    }
 
     public String getToken() {
         return token;

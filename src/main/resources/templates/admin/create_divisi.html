@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>REPORT</title>
+</head>
+<body>
+<section layout:fragment="content">
+
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+
+
+                    <form th:action="@{/api/mgmntdivisi/v1/divisi/new}" th:object = "${divisi}" method="POST" id="buatDivisi"><!--	ID FORM TIDAK BOLEH SAMA DENGAN ID MODALS DI FRAGMENT -->
+                        <input type="hidden" value="ba373d733ada7137826035e1fa01008b" /><!-- form generate id security of front end -->
+
+                        <div th:if="${#fields.hasErrors('global')}" class="error-box error-danger" >
+                            <p th:each="err : ${#fields.errors('global')}" th:text="${err}"  class="error"/>
+                        </div>
+                        <div class ="form-group">
+                            <label> Kode Divisi </label>
+                            <input
+                                    type = "text"
+                                    name = "kodeDivisi"
+                                    th:field = "*{kodeDivisi}"
+                                    class = "form-control"
+                                    placeholder="Masukkan Kode Divisi"
+                            />
+                            <ul>
+                                <li th:each="err : ${#fields.errors('namaDivisi')}" th:text="${err}" class="error" />
+                            </ul>
+                        </div>
+
+                        <div class ="form-group">
+                            <label> Nama Divisi </label>
+                            <input
+                                    type = "text"
+                                    name = "namaDivisi"
+                                    th:field = "*{namaDivisi}"
+                                    class = "form-control"
+                                    placeholder="Masukan Nama Divisi"
+                            />
+                            <ul>
+                                <li th:each="err : ${#fields.errors('namaDivisi')}" th:text="${err}" class="error" />
+                            </ul>
+                        </div>
+
+                        <div class ="form-group">
+                            <label> Deskripsi Divisi </label>
+                            <input
+                                    type = "text"
+                                    name = "deskripsiDivisi"
+                                    th:field = "*{deskripsiDivisi}"
+                                    class = "form-control"
+                                    placeholder="Masukan Deskripsi Divisi"
+                            />
+                            <ul>
+                                <li th:each="err : ${#fields.errors('deskripsiDivisi')}" th:text="${err}" class="error" />
+                            </ul>
+                        </div>
+
+                        <!--    <div class ="form-group">-->
+                        <!--        <label> Group Menu </label>-->
+                        <!--        &lt;!&ndash;		<select th:object="${user}"  th:field="*{permission} class="form-control" name="permission">&ndash;&gt;-->
+                        <!--        <select form="buatDivisi" th:field="*{menuHeader.idMenuHeader}" class="form-control" name="groupMenu" th:object="${menu}" id="groupMenu">-->
+                        <!--            <option th:value="NULL" hidden >-&#45;&#45;Select Group-&#45;&#45;</option>-->
+                        <!--            <option th:each="menuHeader: ${listMenuHeader.get('data')}" th:value="${menuHeader.idMenuHeader}" th:text="${menuHeader.namaMenuHeader}"></option>-->
+                        <!--        </select>-->
+                        <!--        <ul>-->
+                        <!--            <li th:each="err : ${#fields.errors('menuHeader')}" th:text="${err}" class="error" />-->
+                        <!--        </ul>-->
+                        <!--    </div>-->
+
+                        <div class = "modal-footer">
+                            <button type="submit" class = "btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+                    function fungsiMasuk() {
+                      var x = document.getElementById("in");
+                      if (x.style.display === "none") {
+                        x.style.display = "block";
+                      } else {
+                        x.style.display = "none";
+                      }
+                    }
+
+                     function fungsiKeluar() {
+                      var x = document.getElementById("out");
+                      if (x.style.display === "none") {
+                        x.style.display = "block";
+                      } else {
+                        x.style.display = "none";
+                      }
+                    }
+                    </script>
+
+</section>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

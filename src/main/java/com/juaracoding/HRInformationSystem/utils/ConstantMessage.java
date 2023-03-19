@@ -2,6 +2,7 @@ package com.juaracoding.HRInformationSystem.utils;
 
 public class ConstantMessage {
 
+
     /*
     Memperbolehkan nilai numerik dari 0 hingga 9.
     Memperbolehkan Huruf besar dan huruf kecil dari a sampai z.
@@ -21,8 +22,8 @@ public class ConstantMessage {
     public final static String REGEX_PHONE = "^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$";
 
     /*
-    * Tidak memperbolehkan tanda | (pipa) dan ' (petik 1)
-    */
+     * Tidak memperbolehkan tanda | (pipa) dan ' (petik 1)
+     */
     public final static String REGEX_EMAIL_STANDARD_RFC5322  = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
     public final static String REGEX_DATE_YYYYMMDD  = "^([0-9][0-9])?[0-9][0-9]-(0[0-9]||1[0-2])-([0-2][0-9]||3[0-1])$";
 
@@ -43,26 +44,30 @@ public class ConstantMessage {
     public final static String WARNING_DATA_EMPTY = "DATA TIDAK ADA";
 
     public final static String ERROR_DATA_INVALID = "DATA TIDAK VALID";
+    public final static String SUCCESS_DELETE = "DATA BERHASIL DIHAPUS";
     public final static String ERROR_SAVE_FAILED = "DATA GAGAL DISIMPAN";
+    public final static String ERROR_UPDATE_FAILED = "DATA GAGAL DIUBAH";
     public final static String ERROR_CH_PWD_FAILED = "GANTI PASSWORD GAGAL";
     public final static String ERROR_INTERNAL_SERVER = "INTERNAL SERVER ERROR";
     public final static String ERROR_MAIL_FORM_JSON = "Malformed JSON request";
     public final static String ERROR_EMAIL_FORMAT_INVALID = "FORMAT EMAIL TIDAK SESUAI (Nomor/Karakter@Nomor/Karakter Tanpa tanda | atau ')";
     public final static String ERROR_PHONE_NUMBER_FORMAT_INVALID = "FORMAT NOMOR HANDPHONE TIDAK SESUAI (+628XX-xxx) ex : +62813-24";
     public final static String ERROR_DATE_FORMAT_YYYYMMDD = "FORMAT TANGGAL TIDAK SESUAI (YYYY-mm-dd)";
-//    public final static String ERROR_DATE_FORMAT_DDMMYYYY = "FORMAT TANGGAL TIDAK SESUAI (dd-MM-YYYY)";
+    //    public final static String ERROR_DATE_FORMAT_DDMMYYYY = "FORMAT TANGGAL TIDAK SESUAI (dd-MM-YYYY)";
     public final static String ERROR_DATE_FORMAT_DDMMYYYY = "FORMAT TANGGAL TIDAK SESUAI (Tanggal(dd)-Bulan(MM)-Tahun(YYYY)) contoh : 01-01-2001";
     public final static String ERROR_UNEXPECTED = "UNEXPECTED ERROR";
     public final static String ERROR_UNPROCCESSABLE = "Validation error. Check 'errors' field for details.";
     public final static String ERROR_NO_CONTENT = "PERMINTAAN TIDAK DAPAT DIPROSES";
 
-    /*
+       /*
         AUTH
      */
 
     public final static String ERROR_REGIS_FAILED = "REGISTRASI GAGAL";
     public final static String ERROR_TOKEN_INVALID = "TOKEN TIDAK SESUAI";
     public final static String SUCCESS_CHECK_REGIS = "PROSES REGISTRASI AMAN";
+    public final static String VERIFY_LINK_VALID = "LINK VERIFIKASI VALID";
+    public final static String USER_IS_ACTIVE = "USER SUDAH AKTIF";
     public final static String SUCCESS_LOGIN = "LOGIN BERHASIL";
     public final static String SUCCESS_SEND_NEW_TOKEN = "TOKEN BARU BERHASIL DIKIRIM KE EMAIL";
     public final static String SUCCESS_CHANGE_PWD = "PASSWORD BERHASIL DIUBAH";
@@ -71,11 +76,12 @@ public class ConstantMessage {
     public final static String ERROR_USER_ISACTIVE = "REGISTRASI GAGAL! EMAIL SUDAH TERDAFTAR";
     public final static String ERROR_NOHP_ISEXIST = "REGISTRASI GAGAL! NO HP SUDAH TERDAFTAR";
     public final static String ERROR_USERNAME_ISEXIST = "REGISTRASI GAGAL! USERNAME SUDAH TERDAFTAR";
-    public final static String ERROR_EMAIL_MAX_MIN_LENGTH = "PANJANG EMAIL MIN 15 MAKS 50 !!";
+    public final static String ERROR_EMAIL_MAX_MIN_LENGTH = "PANJANG EMAIL MIN 5 MAKS 50 !!";
+    public final static String ERROR_LOGIN_MAX_MIN_LENGTH = "LOGIN MIN 5 MAKS 50 !!";
     public final static String ERROR_EMAIL_IS_NULL = "EMAIL TIDAK BOLEH NULL!!";
     public final static String ERROR_EMAIL_IS_EMPTY = "EMAIL TIDAK BOLEH EMPTY!!";
     public final static String ERROR_USER_NOT_EXISTS = "USER TIDAK TERDAFTAR / USERNAME DAN PASSWORD SALAH !!";
-    public final static String ERROR_LOGIN_FAILED = "USERNAME DAN PASSWORD SALAH !!";
+    public final static String ERROR_LOGIN_FAILED = "USERNAME ATAU PASSWORD SALAH !!";
     public final static String ERROR_FLOW_INVALID = "PROSES TIDAK SESUAI DENGAN PROSEDUR";
 
     public final static String ERROR_USRNAME_MAX_MIN_LENGTH = "USERNAME MIN 10 MAKS 30  KARAKTER!!";
@@ -106,5 +112,39 @@ public class ConstantMessage {
     public final static String ERROR_TOKEN_FORGOTPWD_NOT_SAME = "TOKEN SALAH !!";
     public final static String ERROR_PASSWORD_CONFIRM_FAILED = "PASSWORD KONFIRMASI TIDAK COCOK DENGAN PASSWORD BARU !!";
     public final static String ERROR_PASSWORD_IS_SAME = "PASSWORD BARU TIDAK BOLEH SAMA DENGAN PASSWORD LAMA !!";
+
+    /*
+        Menu
+     */
+    public final static String WARNING_MENU_NAME_LENGTH = "NAMA MENU MAKS 25  KARAKTER!!";
+    public final static String WARNING_MENU_PATH_LENGTH = "NAMA MENU MAKS 50  KARAKTER!!";
+    public final static String WARNING_MENU_ENDPOINTLENGTH = "ENDPOINT MENU MAKS 30  KARAKTER!!";
+
+    public final static String WARNING_MENU_NOT_EXISTS = "MENU TIDAK DOTEMUKAN";
+    public final static String WARNING_MENU_PATH_INVALID = "PATH MENU TIDAK SESUAI (HARUS DIAWALI /api/)";
+    public final static String WARNING_MENU_END_POINTS_INVALID = "END POINTS MENU TIDAK SESUAI (dapat ditanyakan ke bagian IT untuk format nya)";
+
+    /*
+        MENU HEADER
+     */
+    public final static String WARNING_MENU_HEADER_NOT_EXISTS = "GROUP MENU TIDAK DOTEMUKAN";
+
+    /*
+        DEMO
+     */
+
+    public final static String WARNING_DEMO_NOT_EXISTS = "DEMO TIDAK DOTEMUKAN";
+
+    /*
+        AKSES
+     */
+    public final static String WARNING_AKSES_NOT_EXISTS = "AKSES TIDAK DOTEMUKAN";
+
+    /*
+         DIVISI
+      */
+    public final static String WARNING_DIVISI_NOT_EXISTS = "DIVISI TIDAK DOTEMUKAN";
+
+
 
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>REPORT</title>
+</head>
+<body>
+<section layout:fragment="content">
+
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+<!--                    <form th:action="@{/api/authz/v1/verify/{size}/{page}/{sort}?email={mailz} (mailz=${verifyEmail},sortz=${sorting},page=${paging}})}" th:object = "${usr}" method="POST">&ndash;&gt;-->
+                        <form th:action="@{/api/authz/v1/verify/?email={mailz} (mailz=${verifyEmail}) }" th:object = "${usr}" method="POST">
+                            <!--            <form th:action="@{/api/school/v1/students/{id} (id=${student.id})}" th:object = "${student}" method="POST">-->
+                            <h1>Input Token</h1>
+                            <div th:if="${#fields.hasErrors('global')}" class="error-box error-danger" >
+                                <p th:each="err : ${#fields.errors('global')}" th:text="${err}"  />
+                            </div>
+                            <div>
+                                <label hidden th:text="${verifyEmail}" id="verifyEmail">[verifyEmail]</label>
+                            </div>
+                            <div>
+                                <label for="tokenz">Input Token:</label>
+                                <input type="password" th:field = "*{token}" name="token" id="tokenz" maxlength="6"/>
+                            </div>
+
+                            <div>
+                                <a>
+                                <button type="submit"
+                                        class="btn btn-outline-primary">
+                                    Kirim
+                                </button>
+                                </a>
+                            </div>
+                            <hr>
+
+
+                            <a th:href = "@{/api/authz/v1/taketoken?email={mailz} (mailz=${verifyEmail})}">
+                                <button type="submit"
+                                        class="btn btn-outline-primary">
+                                    New Token
+                                </button>
+                            </a>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

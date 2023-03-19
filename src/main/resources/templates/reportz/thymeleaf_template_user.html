@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"/>
+    <link th:href="@{~/styles/style.css}" rel="stylesheet"/>
+    <link th:href="@{~/styles/navbar.css}" rel="stylesheet"/>
+    <link th:href="@{~/styles/banner.css}" rel="stylesheet"/>
+    <title>AKSES TEMPLATE</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <th:block th:if="${#lists.size(content) != 0}"/>
+            <table border="1" class = "table table-striped table-responsive-md">
+                <thead class="table-dark">
+                <tr>
+                    <th style="text-align: center">NO</th>
+                    <th style="text-align: center">ID</th>
+                    <th style="text-align: center">NAMA LENGKAP</th>
+                    <th style="text-align: center">NO. HP</th>
+                    <th style="text-align: center">USERNAME</th>
+                    <th style="text-align: center">NAMA AKSES</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="childEntity, idx : ${content}">
+                    <td th:text="${idx.index+1}"></td>
+                    <td th:text="${childEntity.idUser}"></td>
+                    <td th:text="${childEntity.namaLengkap}"></td>
+                    <td th:text="${childEntity.noHP}"></td>
+                    <td th:text="${childEntity.username}"></td>
+                    <td th:text="${childEntity.akses==null}?'':${childEntity.akses?.namaAkses}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -9,16 +9,24 @@ import javax.validation.constraints.NotNull;
 public class ForgetPasswordDTO {
 
 
-    @NotEmpty(message = ConstantMessage.ERROR_PASSWORD_IS_EMPTY)
-    @NotNull(message = ConstantMessage.ERROR_PASSWORD_IS_NULL)
-    @Length(message = ConstantMessage.ERROR_PASSWORD_MAX_MIN_LENGTH, max = 25,min = 8)
-    private String oldPassword;
+//    @NotEmpty(message = ConstantMessage.ERROR_PASSWORD_IS_EMPTY)
+//    @NotNull(message = ConstantMessage.ERROR_PASSWORD_IS_NULL)
+//    @Length(message = ConstantMessage.ERROR_PASSWORD_MAX_MIN_LENGTH, max = 25,min = 8)
+//    private String oldPassword;
 
+    /*
+        validasi field newPassword not null not empty
+        length max 25 min 8
+     */
     @NotEmpty(message = ConstantMessage.ERROR_NEW_PASSWORD_IS_EMPTY)
     @NotNull(message = ConstantMessage.ERROR_NEW_PASSWORD_IS_NULL)
     @Length(message = ConstantMessage.ERROR_NEW_PASSWORD_MAX_MIN_LENGTH, max = 25,min = 8)
     private String newPassword;
 
+    /*
+        validasi field email not null not empty
+        length max 25 min 8
+     */
     @NotEmpty(message = ConstantMessage.ERROR_CONFIRM_PASSWORD_IS_EMPTY)
     @NotNull(message = ConstantMessage.ERROR_CONFIRM_PASSWORD_IS_NULL)
     @Length(message = ConstantMessage.ERROR_CONFIRM_PASSWORD_MAX_MIN_LENGTH, max = 25,min = 8)
@@ -43,13 +51,13 @@ public class ForgetPasswordDTO {
         this.email = email;
     }
 
-    public String getOldPassword() {
-        return oldPassword;
-    }
-
-    public void setOldPassword(String oldPassword) {
-        this.oldPassword = oldPassword;
-    }
+//    public String getOldPassword() {
+//        return oldPassword;
+//    }
+//
+//    public void setOldPassword(String oldPassword) {
+//        this.oldPassword = oldPassword;
+//    }
 
     public String getNewPassword() {
         return newPassword;

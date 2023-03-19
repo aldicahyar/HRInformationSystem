@@ -58,7 +58,7 @@ public class GenerateMenuString {
              mapx.entrySet()) {
             sBuild.setLength(0);
             strListMenuHtml = sBuild.append(strListMenuHtml).append("<li class=\"nav-item\">")
-                    .append("<a class=\"nav-link\" href=\"#\">").append(strMap.getKey()).append("</a>")
+                    .append("<a class=\"nav-link\"  href=\"#\">").append(strMap.getKey()).append("</a>")
                     .append("<ul class=\"nav flex-column sub-menu\">").toString();
             linkMenu = strMap.getValue();
             strLinkArr = linkMenu.split("#");
@@ -67,7 +67,7 @@ public class GenerateMenuString {
                 strSplitLink = strLinkArr[i].split("-");
                 sBuild.setLength(0);
                 strListMenuHtml = sBuild.append(strListMenuHtml).
-                        append("<li>").append("<a href=\"").append(strSplitLink[0]).append("\">")
+                        append("<li >").append("<a href=\"").append(strSplitLink[0]).append("\">")
                         .append(strSplitLink[1]).append("</a>").append("</li>").toString();
             }
             sBuild.setLength(0);

@@ -14,15 +14,15 @@
     <div class="wrapper">
         <form th:action="@{/api/authz/v1/login/}" th:object = "${usr}" method="POST">
         <h1>Sign In</h1>
-            <div th:if="${#fields.hasErrors('global')}" class="error-box error-danger" >
-                <p th:each="err : ${#fields.errors('global')}" th:text="${err}"  />
+            <div th:if="${#fields.hasErrors('global')}" class="error-box error-danger alert" >
+                <p th:each="err : ${#fields.errors('global')}" th:text="${err}"></p>
             </div>
         <div>
           <label for="email">Email / Username :</label>
           <input type="text" th:field = "*{email}" name="email" id="email"/>
 
             <ul>
-                <li th:each="err : ${#fields.errors('email')}" th:text="${err}" class="error" />
+                <li th:each="err : ${#fields.errors('email')}" th:text="${err}" class="error alert"></li>
             </ul>
         </div>
 
@@ -30,7 +30,7 @@
           <label for="password">Password:</label>
           <input type="password" th:field = "*{password}" name="password" id="password"/>
             <ul>
-                <li th:each="err : ${#fields.errors('password')}" th:text="${err}" class="error" />
+                <li th:each="err : ${#fields.errors('password')}" th:text="${err}" class="error alert"></li>
             </ul>
         </div>
         <div>

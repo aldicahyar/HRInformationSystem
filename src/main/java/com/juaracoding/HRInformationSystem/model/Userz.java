@@ -24,7 +24,7 @@ public class Userz {
     private Long idUser;
 
     @NotEmpty(message = ConstantMessage.ERROR_EMAIL_IS_EMPTY)
-    @Length(message = ConstantMessage.ERROR_EMAIL_MAX_MIN_LENGTH ,min = 15,max = 50)
+    @Length(message = ConstantMessage.ERROR_EMAIL_MAX_MIN_LENGTH ,min = 5,max = 50)
     @NotNull(message = ConstantMessage.ERROR_EMAIL_IS_NULL)
     @Column(name = "Email",unique = true,length = 50)
     private String email;
@@ -88,6 +88,18 @@ public class Userz {
     @ManyToOne
     @JoinColumn(name = "IDAkses")
     private Akses akses;
+
+    @ManyToOne
+    @JoinColumn(name = "IDDivisi")
+    private Divisi divisi;
+
+    public Divisi getDivisi() {
+        return divisi;
+    }
+
+    public void setDivisi(Divisi divisi) {
+        this.divisi = divisi;
+    }
 
     public Akses getAkses() {
         return akses;

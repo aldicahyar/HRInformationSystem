@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/styles/error.css}" rel="stylesheet" />
+    <script th:src="@{/js/modalz.js}"></script>
+    <script th:src="@{/js/action.js}"></script>
+    </style>
+    <title>ABSENSI</title>
+</head>
+<body>
+<section layout:fragment="content">
+
+    <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+
+                    <p>
+
+                        Tanggal/Waktu: <span id="tanggalwaktu"></span>
+                    </p>
+
+                    <br>
+                    <br>
+
+                    <p>
+                        SILAHKAN ABSEN DISINI
+                    </p>
+                    <br>
+                    <br>
+                    <p>
+                        <th:block th:if="${USR_IDZ != null}" th:utext="${USR_NAMEZ}" />
+                    </p>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <div th:if="${#strings.equals(flag,'IN')}">
+                        <form id="absenMasuk" th:object="${absen}" th:action="@{/api/absenmgmnt/v1/absen/in}" method="POST">
+                            <button type="submit" class="btn btn-primary btn-lg">MASUK</button>
+                        </form>
+                    </div>
+
+
+                    <div th:if="${#strings.equals(flag,'OUT')}">
+
+                        <form id="absenKeluar" th:object="${absen}" th:action="@{/api/absenmgmnt/v1/absen/out}" method="POST">
+                            <button type="submit" class="btn btn-primary btn-lg">KELUAR</button>
+                        </form>
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var dt = new Date();
+        document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
+    </script>
+
+    </section>
+
+</body>
+</html>

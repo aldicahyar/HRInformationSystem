@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link th:href="@{/styles/error.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous">
@@ -31,14 +31,24 @@
         </div>
         <div class="col-md-4 login-form">
             <center><h3>SIGN IN</h3></center>
-            <form method="post" th:action="@{/admin/dashboard/}" th:object="${usr}">
+
+            <form method="post" th:action="@{/admin/v1/dashboard/}" th:object="${usr}">
+                <div th:if="${#fields.hasErrors('global')}" class="error-box error-danger" >
+                    <p th:each="err : ${#fields.errors('global')}" th:text="${err}"></p>
+                </div>
                 <div class="form-group">
                     <input type="text" th:field="*{email}" class="form-control" placeholder="Your Username *"
                            id="userNameInput" aria-describedby="userNameHelp"/>
+                    <ul>
+                        <li th:each="err : ${#fields.errors('email')}" th:text="${err}" class="error"></li>
+                    </ul>
                 </div>
                 <div class="form-group">
                     <input type="password"  th:field="*{password}" class="form-control" placeholder="Your Password *"
                            id="adminPasswordInput" aria-describedby="adminPasswordHelp"/>
+                    <ul>
+                        <li th:each="err : ${#fields.errors('password')}" th:text="${err}" class="error"></li>
+                    </ul>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Login</button>

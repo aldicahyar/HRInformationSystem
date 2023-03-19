@@ -1,5 +1,15 @@
 package com.juaracoding.HRInformationSystem.model;
 
+/*
+Created By IntelliJ IDEA 2022.1.3 (Community Edition)
+Build #IC-221.5921.22, built on June 21, 2022
+@Author JEJE a.k.a Jefri S
+Java Developer
+Created On 3/18/2023 00:38
+@Last Modified 3/18/2023 00:38
+Version 1.0
+*/
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -36,7 +46,7 @@ public class Divisi {
     private Integer modifiedBy;
 
     @Column(name = "IsDelete", nullable = false)
-    private Byte isDelete = 0;//khusus disini default 0 karena setelah verifikasi baru di update menjadi 1
+    private Byte isDelete = 1;
     /*
         end audit trails
      */

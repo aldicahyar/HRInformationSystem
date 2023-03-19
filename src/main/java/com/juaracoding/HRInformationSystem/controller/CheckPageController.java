@@ -5,17 +5,24 @@ import com.juaracoding.HRInformationSystem.dto.ForgetPasswordDTO;
 import com.juaracoding.HRInformationSystem.dto.UserDTO;
 import com.juaracoding.HRInformationSystem.model.Userz;
 import com.juaracoding.HRInformationSystem.utils.CaptchaUtils;
+import com.juaracoding.HRInformationSystem.utils.MappingAttribute;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("api/check")
 public class CheckPageController {
 
+    private MappingAttribute mappingAttribute = new MappingAttribute();
+
+    private Map<String, Object> objectMapper = new HashMap<String, Object>();
 
     @GetMapping("/signin")
     public String pageOne(Model model)
@@ -30,11 +37,12 @@ public class CheckPageController {
     }
 
     @GetMapping("/register")
-    public String pageTwo(Model model)
+    public String pageTwo(Model model, WebRequest request)
     {
         UserDTO users = new UserDTO();
         model.addAttribute("usr",users);
-        return "auth/register";
+        mappingAttribute.setAttribute(model,objectMapper,request);//untuk set session
+        return "admin/tambah_user";
     }
 
     @GetMapping("/verify")

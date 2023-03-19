@@ -1,6 +1,9 @@
 package com.juaracoding.HRInformationSystem.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "MstStudent")
@@ -11,10 +14,14 @@ public class Student {
 	private Long id;
 	
 	@Column(name = "FirstName", nullable = false)
-	private String firstName;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@Temporal(TemporalType.DATE)
+	private Date firstName;
 	
 	@Column(name = "LastName")
-	private String lastName;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@Temporal(TemporalType.DATE)
+	private Date lastName;
 	
 	@Column(name = "Email")
 	private String email;
@@ -31,19 +38,19 @@ public class Student {
 		this.id = id;
 	}
 
-	public String getFirstName() {
+	public Date getFirstName() {
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
+	public void setFirstName(Date firstName) {
 		this.firstName = firstName;
 	}
 
-	public String getLastName() {
+	public Date getLastName() {
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
+	public void setLastName(Date lastName) {
 		this.lastName = lastName;
 	}
 

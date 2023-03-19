@@ -15,7 +15,7 @@ public class MappingAttribute {
     {
         model.addAttribute("message", mapz.get("message"));
         model.addAttribute("status", mapz.get("status"));
-        model.addAttribute("data", mapz.get("responseObj")==null?"":mapz.get("responseObj"));
+        model.addAttribute("data", mapz.get("data")==null?"":mapz.get("data"));
         model.addAttribute("timestamp", new Date());
         model.addAttribute("success",mapz.get("success"));
         if(mapz.get("errorCode") != null)
@@ -30,7 +30,7 @@ public class MappingAttribute {
     {
         model.addAttribute("message", mapz.get("message"));
         model.addAttribute("status", mapz.get("status"));
-        model.addAttribute("data", mapz.get("responseObj")==null?"":mapz.get("responseObj"));
+        model.addAttribute("data", mapz.get("data")==null?"":mapz.get("data"));
         model.addAttribute("timestamp", new Date());
         model.addAttribute("success",mapz.get("success"));
         model.addAttribute("USR_IDZ",request.getAttribute("USR_ID",1));//panggil di html dengan nama ${USR_IDZ}
@@ -45,6 +45,16 @@ public class MappingAttribute {
             model.addAttribute("path",mapz.get("path"));
         }
     }
+
+    public void setAttribute(Model model, WebRequest request)
+    {
+        model.addAttribute("USR_IDZ",request.getAttribute("USR_ID",1));//panggil di html dengan nama ${USR_IDZ}
+        model.addAttribute("NO_HPZ",request.getAttribute("NO_HP",1));//panggil di web dengan nama ${NO_HPZ}
+        model.addAttribute("EMAILZ",request.getAttribute("EMAIL",1));//panggil di web dengan nama ${EMAILZ}
+        model.addAttribute("USR_NAMEZ",request.getAttribute("USR_NAME",1));//panggil di web dengan nama ${USR_NAMEZ}
+        model.addAttribute("HTML_MENUZ",request.getAttribute("HTML_MENU",1));//panggil di web dengan nama ${HTML_MENUZ}<07 03 2023>
+    }
+
 
     public BindingResult setErrorMessage(BindingResult br, String  strErrorMessage)
     {

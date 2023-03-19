@@ -21,6 +21,55 @@ public class OtherConfig {
     private static String flagSessionValidation;
 
 
+    private static String urlEndPointVerify;
+
+    private static String urlPathVerifyEmail;
+
+    public static String getUrlPathVerifyEmail() {
+        return urlPathVerifyEmail;
+    }
+
+
+    private static String pathThymeleafTemplateReport;
+    private static String pathSeparatorReport;
+
+    public static String getPathSeparatorReport() {
+        return pathSeparatorReport;
+    }
+
+    @Value("${path.separator.report}")
+    private void setPathSeparatorReport(String pathSeparatorReport) {
+        OtherConfig.pathSeparatorReport = pathSeparatorReport;
+    }
+
+    public static String getPathThymeleafTemplateReport() {
+        return pathThymeleafTemplateReport;
+    }
+
+    @Value("${path.thymeleaf.template.report}")
+    private void setPathThymeleafTemplateReport(String pathThymeleafTemplateReport) {
+        OtherConfig.pathThymeleafTemplateReport = pathThymeleafTemplateReport;
+    }
+
+    @Value("${url.path.verify.email}")
+    private void setUrlPathVerifyEmail(String urlPathVerifyEmail) {
+        OtherConfig.urlPathVerifyEmail = urlPathVerifyEmail;
+    }
+
+
+    public static String getUrlEndPointVerify() {
+        return urlEndPointVerify;
+    }
+
+    @Value("${url.end.point.verify}")
+    private void setUrlEndPointVerify(String urlEndPointVerify) {
+        OtherConfig.urlEndPointVerify = urlEndPointVerify;
+    }
+
+
+
+
+
     public static String getFlagSessionValidation() {
 
         return flagSessionValidation;
